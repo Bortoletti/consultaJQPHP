@@ -1,0 +1,26 @@
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+
+
+<br>Produto
+<br><input type='text' id='codigo'>
+<br><button id='btnPesquisar'>Pesquisar</button>
+<br><div id='exibir'></div>
+
+
+</body>
+<script>
+$("#btnPesquisar").on("click"
+, function(){
+    
+    var url = "./consulta.php?id=" + document.getElementById("codigo").value;
+    console.log( url );
+    $.get( url, function (data, status) {
+            document.getElementById("exibir").innerHTML = "<h1>" + data + "</h1>"
+    });
+});
+</script>
+</html>
